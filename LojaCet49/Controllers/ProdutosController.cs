@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LojaCet49.Dados;
+using LojaCet49.Dados.Entidades;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using LojaCet49.Dados;
-using LojaCet49.Dados.Entidades;
 
-namespace LojaCet49.Controllers
+namespace LojaCet50.Controllers
 {
-    public class ProdutoesController : Controller
+    public class ProdutosController : Controller
     {
         private readonly DataContext _context;
 
-        public ProdutoesController(DataContext context)
+        public ProdutosController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: Produtoes
+        // GET: Produtos
         public async Task<IActionResult> Index()
         {
             return View(await _context.Produtos.ToListAsync());
         }
 
-        // GET: Produtoes/Details/5
+        // GET: Produtos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +30,7 @@ namespace LojaCet49.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produtos
+            var produto = await _context.Produtos          //Método
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
@@ -43,13 +40,13 @@ namespace LojaCet49.Controllers
             return View(produto);
         }
 
-        // GET: Produtoes/Create
+        // GET: Produtos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Produtoes/Create
+        // POST: Produtos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +62,7 @@ namespace LojaCet49.Controllers
             return View(produto);
         }
 
-        // GET: Produtoes/Edit/5
+        // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +78,7 @@ namespace LojaCet49.Controllers
             return View(produto);
         }
 
-        // POST: Produtoes/Edit/5
+        // POST: Produtos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +113,7 @@ namespace LojaCet49.Controllers
             return View(produto);
         }
 
-        // GET: Produtoes/Delete/5
+        // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +131,7 @@ namespace LojaCet49.Controllers
             return View(produto);
         }
 
-        // POST: Produtoes/Delete/5
+        // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
