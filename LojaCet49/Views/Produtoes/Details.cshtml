@@ -1,0 +1,60 @@
+﻿@model LojaCet49.Dados.Entidades.Produto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlDaImagem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UrlDaImagem)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimaCompra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UltimaCompra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimaVenda)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UltimaVenda)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
