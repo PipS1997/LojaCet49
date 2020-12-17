@@ -1,0 +1,69 @@
+﻿@model LojaCet49.Dados.Entidades.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Remover Clientes</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Morada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Morada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telemóvel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telemóvel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DNasc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DNasc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NIF)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimaCompra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UltimaCompra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorDivida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorDivida)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
